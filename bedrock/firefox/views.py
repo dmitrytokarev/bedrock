@@ -507,6 +507,11 @@ def new(request):
     # Onboarding funnelcake experiment (Bug 1333435).
     funnelcake_id = request.GET.get('f', False)
 
+    # Win64 funnelcake experiment (bug 1309847)
+    context = {
+        'win64_funnelcake_locales': ['de', 'es-ES', 'fr', 'pt-BR', 'ru']
+    }
+
     if scene == '2':
         if locale == 'en-US':
             if funnelcake_id in ['99', '100']:
@@ -576,7 +581,7 @@ def new(request):
         else:
             template = 'firefox/new/scene1.html'
 
-    return l10n_utils.render(request, template)
+    return l10n_utils.render(request, template, context)
 
 
 def ios_testflight(request):
