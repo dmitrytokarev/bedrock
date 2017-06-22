@@ -736,3 +736,13 @@ def sync(request):
         template = 'firefox/sync.html'
 
     return l10n_utils.render(request, template)
+
+def FirefoxDevEdition(request, template='firefox/developer-2017.html'):
+    locale = l10n_utils.get_locale(request)
+
+    if lang_file_is_active('firefox/developer-2017', locale):
+        template = 'firefox/developer-2017.html'
+    else:
+        template = 'firefox/developer.html'
+
+    return l10n_utils.render(request, template)

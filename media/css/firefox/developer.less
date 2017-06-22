@@ -7,6 +7,10 @@
 // Some common classes/mixins
 @buttonGreen: #14c329;
 
+#firefox-developer #outer-wrapper {
+    background: #1d2142;
+}
+
 #wrapper {
     width: 100%;
     padding-bottom: 0;
@@ -54,11 +58,12 @@
 .intro-feature {
     .span(4);
     list-style-type: none;
+
     h3 {
         .font-size(36px);
     }
+
     p {
-        color: @blueprintTextColorSecondary;
         margin: 0 @baseLine/2;
     }
 }
@@ -66,10 +71,12 @@
 .tools {
     background: #142c43 url('/media/img/firefox/developer/tools-background.jpg') 50% 50% no-repeat;
     text-align: center;
+
     .container {
         padding-top: @baseLine * 4;
         padding-bottom: @baseLine * 4;
     }
+
     p {
         .span(8);
         .offset(2);
